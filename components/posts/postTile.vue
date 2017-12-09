@@ -1,8 +1,8 @@
 <template>
   <article class="article">
-    <!-- <router-link> -->
+    <nuxt-link :to="link">
       <div class="post-img" :style="{backgroundImage: imageUrl (post)}"></div>
-    <!-- </router-link> -->
+    </nuxt-link>
     <h5 class="post-title">{{post.post_title}}</h5>
     <p class="post-muted">{{date(post)}} - {{post.comment_count}} comments</p>
   </article>
@@ -18,6 +18,9 @@ export default {
   },
   props: ['post'],
   computed: {
+    link () {
+      return 'post/' + this.post.slug
+    }
   },
   methods: {
     imageUrl (post) {
