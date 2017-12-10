@@ -14,7 +14,7 @@
 
 <script>
 import axios from 'axios'
-import { mapGetters } from 'Vuex'
+import { mapGetters } from 'vuex'
 
 import postTile from '~/components/posts/postTile'
 

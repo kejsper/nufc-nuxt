@@ -6,7 +6,7 @@
 
 <script>
 import axios from 'axios'
-import { mapGetters } from 'Vuex'
+import { mapGetters } from 'vuex'
 
 import singlePost from '~/components/post/singlePost'
 
