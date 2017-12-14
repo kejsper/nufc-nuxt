@@ -13,7 +13,8 @@ const createStore = () => {
     state: {
       mainNavbar: {},
       footerLinks: {},
-      posts: {}
+      posts: {},
+      post: {}
     },
     actions: {
       async nuxtServerInit ({ commit }) {
@@ -50,6 +51,9 @@ const createStore = () => {
       },
       SET_POSTS: (state, {posts}) => {
         state.posts = posts
+      },
+      SET_POST: (state, {post}) => {
+        state.post = post
       }
     },
     getters: {
@@ -61,6 +65,9 @@ const createStore = () => {
       },
       posts: (state) => {
         return state.posts
+      },
+      post: (state) => {
+        return state.post
       }
     }
   })

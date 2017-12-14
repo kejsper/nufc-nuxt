@@ -14,7 +14,7 @@
 
 <script>
 import axios from 'axios'
-import { mapGetters } from 'Vuex'
+import { mapGetters } from 'vuex'
 
 import postTile from '~/components/posts/postTile'
 
@@ -28,7 +28,12 @@ export default {
   methods: {
   },
   async fetch ({ store }) {
-    const posts = await axios.get('http://www.nufcblog.com/wp-json/nufcblog/v1/posts')
+    const config = {
+      headers: {
+        'Cache-Control': 'no-store, no-cache'
+      }
+    }
+    const posts = await axios.get('http://www.nufcblog.com/wp-json/nufcblog/v1/posts', config)
     store.commit('SET_POSTS', {posts: posts.data})
   }
 }

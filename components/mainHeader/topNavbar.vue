@@ -12,7 +12,7 @@
 
 <script>
 // import axios from 'axios'
-import { mapGetters } from 'Vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'topNavbar',
